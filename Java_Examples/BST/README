@@ -1,0 +1,5 @@
+Binary Search Tree with pool node in JAVA
+
+This example code is implementation of BST in JAVA.
+to save memory and speed up, it is using pool node array.
+
