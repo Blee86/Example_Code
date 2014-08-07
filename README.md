@@ -1,1 +1,3 @@
-Code work from Classes. 
+Class Projects
+
+Written by Yosub Lee
