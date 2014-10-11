@@ -54,28 +54,44 @@ public class LinkedList<T>
      * Constructor.
      * @param value new data for the head node
      */
-    public LinkedList(T value) {
-        head = new Node<T>(value);
+    public LinkedList() {
+        head = new Node<T>(null);
         tail = head;
-        size = 1;
+        size = 0;
     }
 
+    // ----------------------------------------------------------
+    /**
+     * Add new node at the beginning of this list
+     * @param value new elem
+     */
     public void addNodeAtBegin(T value) {
-        Node<T> temp = new Node<T>(value);
-        temp.setNext(head);
-        head = temp;
+        if ( head.getValue() == null ) {
+            head.setValue(value);
+        }
+        else {
+            Node<T> newNode = new Node<T>(value);
+            newNode.setNext(head);
+            head = newNode;
+        }
         size++;
     }
 
     // ----------------------------------------------------------
     /**
-     * Add new node to the list
-     * @param value new data
+     *  Add new node at the end of this list
+     * @param value new elem
      */
     public void addNodeAtEnd(T value) {
-        Node<T> temp = new Node<T>(value);
-        tail.setNext(temp);
-        tail = temp;
+        if ( head == tail && tail.getValue() == null) {
+            tail.setValue(value);
+        }
+        else
+        {
+            Node<T> newNode = new Node<T>(value);
+            tail.setNext(newNode);
+            tail = newNode;
+        }
         size++;
     }
 
@@ -127,8 +143,10 @@ public class LinkedList<T>
         StringBuffer output = new StringBuffer();
         Node<T> temp = head;
         for (int i=0; i< size; i++) {
-            output.append(temp.toString() + " ");
-            temp = temp.getNext();
+            if ( temp != null) {
+                output.append(temp.toString() + " ");
+                temp = temp.getNext();
+            }
         }
 
         return output.toString();
@@ -136,5 +154,12 @@ public class LinkedList<T>
 
     public int size() {
         return size;
+    }
+
+    public void clear() {
+        head.setValue(null);
+        head.setNext(null);
+        tail = head;
+        size = 0;
     }
 }
