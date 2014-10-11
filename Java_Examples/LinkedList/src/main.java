@@ -11,7 +11,7 @@ public class main
     public static void main(String[] args)
     {
         // Test Cases for Singly Linked List
-        LinkedList<Integer> linkedlist = new LinkedList<Integer>(10);
+        LinkedList<Integer> linkedlist = new LinkedList<Integer>();
 
         // Add at the end
         linkedlist.addNodeAtEnd(20);
@@ -39,7 +39,11 @@ public class main
         // Delete a number that doesn't exist
         linkedlist.deleteNode(100);
 
-
+        // Clear
+        linkedlist.clear();
+        System.out.println("\n[ Clear this list ]");
+        System.out.println(linkedlist.toString());
+        System.out.println("Size: " + linkedlist.size());
     }
 
 }
