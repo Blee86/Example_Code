@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<factories>
+  <factory>
+    <name>Factory 1</name>
+    <startNum>4880</startNum>
+    <endNum>4917</endNum>
+    <Children>4905,4908,4908,4886,4884,4913,4906,4889,4885,4914,4903,4896</Children>
+  </factory>
+  <factory>
+    <name>Factory 2</name>
+    <startNum>881</startNum>
+    <endNum>2528</endNum>
+    <Children/>
+  </factory>
+</factories>

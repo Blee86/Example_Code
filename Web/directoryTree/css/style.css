@@ -1,0 +1,28 @@
+body {
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+
+ul.tree, ul.tree ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 10;
+}
+
+.ContextItem   
+{
+	background-color:White;
+	text-align: center;
+	color:Black;
+	font-weight:normal;        
+}
+
+.ContextItem:hover   
+{
+	background-color:#0066FF;
+	color:White;
+	font-weight:bold;            
+}
+
+
+

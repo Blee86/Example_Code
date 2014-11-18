@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- 
+	Author	: Yosub Lee
+	Date	: 11/16/2014
+	
+	Reference info :
+		[Context Menu (rightClick)]
+		- based on the source from
+			http://www.codeproject.com/Tips/630793/Context-Menu-on-Right-Click-in-Webpage
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<script src='factory.js'></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script>
+		// Global Variable
+		var factoryChoice = 0;
+		</script>
+        <title>Folder Tree by Yosub Lee</title>
+
+    </head>
+	<body onload ='getListFromServer();' oncontextmenu="return false">	
+		<!-- Display Result Here -->
+		<ul class="tree">
+			<li>
+			<span id="root" oncontextmenu="ShowRootMenu('rootMenu', event);">
+				<img src="images/folder.png"> Root<!-- Root menu has two choices 1. new factory 2. reset Table -->
+			</span>
+			<div id="top"> </div>	<!-- Server Response will be added to here --> 
+			</li>
+		</ul>
+		
+		<!-- Right Click Menu -->
+		<div style="display:none;padding: 5px;background-color: White;width: 100px;" id="contextMenu" onchange="generateOutput(factoryChoice,0);HideMenu('contextMenu');location.reload()"
+		onmouseleave="HideMenu('contextMenu')">
+                    	<select id="selector">
+                    		<optgroup value="Generator">Number To Generate
+                    			<option id="0">Select</option>
+                    			<option id="1">1</option>
+                    			<option id="2">2</option>
+                    			<option id="3">3</option>
+                    			<option id="4">4</option>
+                    			<option id="5">5</option>
+                    			<option id="6">6</option>
+                    			<option id="7">7</option>
+                    			<option id="8">8</option>
+                    			<option id="9">9</option>
+                    			<option id="10">10</option>
+                    			<option id="11">11</option>
+                    			<option id="12">12</option>
+                    			<option id="13">13</option>
+                    			<option id="14">14</option>
+                    			<option id="15">15</option>
+                    		</optgroup>
+                    	</select>
+                    	</div>
+		<div style="display:none;" id="rootMenu" onmouseleave="HideMenu('rootMenu')">
+			<input type="button" value="New Factory" style="padding: 5px;background-color: White;width: 100px;" 
+			onclick="generateOutput(factoryChoice,1);HideMenu('rootMenu');location.reload()"></br>
+			<input type="button" value="Reset DB" style="padding: 5px;background-color: White;width: 100px;" 
+			onclick="generateOutput(factoryChoice,2);HideMenu('rootMenu');location.reload()">
+		</div>
+			
+	<script>
+        function ShowMenu(control, e) {
+            var posx = e.clientX +window.pageXOffset; //Left Position of Mouse Pointer
+            var posy = e.clientY + window.pageYOffset; //Top Position of Mouse Pointer
+            
+            document.getElementById(control).style.position = 'absolute';
+            document.getElementById(control).style.display = 'inline';
+            document.getElementById(control).style.left = (posx - 10) + 'px';
+            document.getElementById(control).style.top = (posy - 10) + 'px';     
+            window.factoryChoice = e.srcElement.id;   
+        }
+        
+        function HideMenu(control) {
+            document.getElementById(control).style.display = 'none'; 
+        }		
+
+		function ShowRootMenu(control, e) {
+            var posx = e.clientX +window.pageXOffset; //Left Position of Mouse Pointer
+            var posy = e.clientY + window.pageYOffset; //Top Position of Mouse Pointer
+            document.getElementById(control).style.position = 'absolute';
+            document.getElementById(control).style.display = 'inline';
+            document.getElementById(control).style.left = (posx - 10) + 'px';
+            document.getElementById(control).style.top = (posy - 10) + 'px';      
+		}
+		</script>
+
+
+    </body>
+</html>
