@@ -1,7 +1,8 @@
 Prime number detector
 (isPrime)
-Author	:	Yosub Lee
-Date 	:	11/21/2014
+
+ Author	:	Yosub Lee
+ Date 	:	11/21/2014
 
  How it works?
   1. get SQRT
